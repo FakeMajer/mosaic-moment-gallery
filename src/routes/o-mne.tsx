@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import aboutImg from "@/assets/about-portrait.jpg";
+import { ArrowRight, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HOBBIES, INTRO } from "@/lib/profile";
 
 export const Route = createFileRoute("/o-mne")({
   head: () => ({
@@ -9,12 +9,12 @@ export const Route = createFileRoute("/o-mne")({
       { title: "O mně — Adam Kolda" },
       {
         name: "description",
-        content: "Kdo je Adam Kolda, jak fotografuje a s čím vám může pomoci.",
+        content: "Kdo je Adam Kolda: škola, rybaření, freestyle koloběžka, kreslení, hudba, gaming, styl a fingerboard.",
       },
       { property: "og:title", content: "O mně — Adam Kolda" },
       {
         property: "og:description",
-        content: "Příběh fotografa Adama Koldy, jeho přístup a zkušenosti.",
+        content: "Škola, rybaření, koloběžka, kreslení, hudba, gaming, styl a fingerboard.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -23,78 +23,68 @@ export const Route = createFileRoute("/o-mne")({
   component: AboutPage,
 });
 
-const STATS = [
-  { value: "10+", label: "let s fotoaparátem" },
-  { value: "250+", label: "projektů" },
-  { value: "12", label: "výstav" },
-];
-
-const TIMELINE = [
-  { year: "2025", text: "Samostatná výstava „Světlo a stín“, Praha" },
-  { year: "2022", text: "Spolupráce s architektonickými studii po celé ČR" },
-  { year: "2019", text: "Založení vlastního ateliéru" },
-  { year: "2015", text: "První zakázky — portréty a svatby" },
-];
-
 function AboutPage() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-28 pt-36 md:pt-44">
-      <div className="grid gap-16 lg:grid-cols-[5fr_7fr] lg:gap-24">
-        <div className="relative animate-fade-up">
-          <div className="absolute -left-4 -top-4 h-full w-full border border-primary/40" />
-          <img
-            src={aboutImg}
-            alt="Adam Kolda s fotoaparátem"
-            width={832}
-            height={1216}
-            className="relative h-auto w-full object-cover"
-          />
-        </div>
+    <section className="mx-auto max-w-5xl px-6 pb-28 pt-36 md:pt-44">
+      <p className="eyebrow animate-fade-up">O mně</p>
+      <h1 className="mt-4 animate-fade-up text-5xl font-extrabold leading-tight text-foreground [animation-delay:100ms] md:text-7xl">
+        Ahoj, jsem <span className="text-gradient-brand">Adam</span>.
+      </h1>
+      <p className="mt-8 animate-fade-up text-lg leading-relaxed text-muted-foreground [animation-delay:200ms]">
+        {INTRO}
+      </p>
 
-        <div className="flex flex-col justify-center">
-          <p className="eyebrow animate-fade-up">O mně</p>
-          <h1 className="mt-4 animate-fade-up text-5xl font-bold leading-tight text-foreground [animation-delay:100ms] md:text-6xl">
-            Ahoj, jsem <span className="text-gradient-gold">Adam</span>.
-          </h1>
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              Jsem fotograf z Prahy. Fascinuje mě světlo — to, jak dokáže proměnit obyčejné místo
-              v něco výjimečného, a jak odhalí charakter člověka v jediném okamžiku.
-            </p>
-            <p>
-              Fotím portréty, architekturu, krajinu i život v ulicích. Ke každé zakázce přistupuji
-              osobně a s důrazem na detail, protože věřím, že dobrá fotografie vypráví příběh.
-            </p>
-          </div>
+      <h2 className="mt-24 text-3xl font-bold text-foreground md:text-4xl">
+        Teď něco víc k mému <span className="text-highlight">životu</span>
+      </h2>
 
-          <div className="mt-12 grid grid-cols-3 gap-6 border-y border-border py-8">
-            {STATS.map((s) => (
-              <div key={s.label}>
-                <div className="font-display text-4xl font-bold text-primary md:text-5xl">{s.value}</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                  {s.label}
+      <div className="mt-10 space-y-6">
+        {HOBBIES.map((h, i) => {
+          const Icon = h.icon;
+          return (
+            <article
+              key={h.id}
+              id={h.id}
+              className="scroll-mt-28 rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-colors hover:border-primary/50 md:p-10"
+            >
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <Icon className="size-6" />
+                </span>
+                <div>
+                  <span className="text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="text-2xl font-bold text-foreground md:text-3xl">{h.title}</h3>
                 </div>
               </div>
-            ))}
-          </div>
+              <p className="mt-6 leading-relaxed text-muted-foreground">{h.text}</p>
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                {h.motto && (
+                  <span className="rounded-full bg-highlight px-4 py-1.5 text-sm font-bold text-highlight-foreground">
+                    {h.motto}
+                  </span>
+                )}
+                {h.link && (
+                  <a
+                    href={h.link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                  >
+                    <Youtube className="size-4" /> {h.link.label}
+                  </a>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
 
-          <ul className="mt-12 space-y-5">
-            {TIMELINE.map((t) => (
-              <li key={t.year} className="flex gap-6">
-                <span className="w-14 shrink-0 font-display text-primary">{t.year}</span>
-                <span className="text-foreground">{t.text}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-12">
-            <Button asChild variant="gold" size="xl">
-              <Link to="/kontakt">
-                Domluvme se <ArrowRight />
-              </Link>
-            </Button>
-          </div>
-        </div>
+      <div className="mt-16 text-center">
+        <Button asChild variant="highlight" size="xl">
+          <Link to="/kontakt">
+            Kontaktuj mě <ArrowRight />
+          </Link>
+        </Button>
       </div>
     </section>
   );

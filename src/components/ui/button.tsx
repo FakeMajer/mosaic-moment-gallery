@@ -16,9 +16,12 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        gold: "rounded-none bg-primary text-primary-foreground uppercase tracking-[0.2em] text-xs font-semibold transition-all duration-500 hover:bg-primary-glow shadow-gold",
-        "gold-outline":
-          "rounded-none border border-primary/60 bg-transparent text-primary uppercase tracking-[0.2em] text-xs font-semibold transition-all duration-500 hover:bg-primary hover:text-primary-foreground",
+        brand:
+          "rounded-full bg-primary text-primary-foreground uppercase tracking-[0.18em] text-xs font-bold transition-all duration-300 hover:bg-primary-glow hover:-translate-y-0.5 shadow-glow",
+        highlight:
+          "rounded-full bg-highlight text-highlight-foreground uppercase tracking-[0.18em] text-xs font-bold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 shadow-glow-highlight",
+        "brand-outline":
+          "rounded-full border border-primary/60 bg-transparent text-primary uppercase tracking-[0.18em] text-xs font-bold transition-all duration-300 hover:bg-primary hover:text-primary-foreground",
         chip: "rounded-full border border-border bg-transparent text-muted-foreground text-xs uppercase tracking-[0.15em] hover:text-foreground hover:border-primary/50 data-[active=true]:border-primary data-[active=true]:bg-primary data-[active=true]:text-primary-foreground",
       },
       size: {
