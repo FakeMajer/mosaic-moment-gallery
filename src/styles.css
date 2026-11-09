@@ -155,6 +155,40 @@
   }
 }
 
+/*
+ * Adam's own skeleton-hand cursor from the old site. Unlayered on purpose so it
+ * wins over Tailwind's cursor-* utilities; text fields keep the text caret.
+ */
+html,
+body,
+a,
+button,
+label,
+select,
+summary,
+[role="button"],
+input[type="submit"],
+input[type="checkbox"],
+input[type="radio"],
+.cursor-pointer,
+.cursor-zoom-in {
+  cursor: url("/cursors/kurzor.png") 0 0, auto;
+}
+
+body:active,
+a:active,
+button:active,
+[role="button"]:active,
+input[type="submit"]:active,
+.cursor-pointer:active,
+.cursor-zoom-in:active {
+  cursor: url("/cursors/kurzor-klik.png") 0 0, auto;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
 @utility text-gradient-brand {
   background: var(--gradient-brand);
   background-size: 200% auto;
