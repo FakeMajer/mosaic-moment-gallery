@@ -5,7 +5,7 @@ import { EMAIL, SOCIALS } from "@/lib/profile";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-7xl flex-col gap8 gap-8 px-6 py-14 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-14 md:flex-row md:items-end md:justify-between">
         <div>
           <Link to="/" className="font-display text-3xl font-bold text-foreground">
             Adam Kolda<span className="text-highlight">.</span>

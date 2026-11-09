@@ -32,7 +32,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="font-display text-xl font-bold tracking-tight text-foreground">
-          Adam Kolda<span className="text-primary">.</span>
+          Adam Kolda<span className="text-highlight">.</span>
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">

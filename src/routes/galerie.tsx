@@ -3,6 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { MasonryGallery } from "@/components/masonry-gallery";
 import { CATEGORIES, PHOTOS } from "@/lib/gallery";
+import { ZONERAMA_URL } from "@/lib/profile";
+import { ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/galerie")({
   head: () => ({
@@ -10,12 +12,12 @@ export const Route = createFileRoute("/galerie")({
       { title: "Galerie — Adam Kolda" },
       {
         name: "description",
-        content: "Fotogalerie Adama Koldy: portréty, krajina, architektura a pouliční fotografie.",
+        content: "Fotogalerie Adama Koldy z Plzně.",
       },
       { property: "og:title", content: "Galerie — Adam Kolda" },
       {
         property: "og:description",
-        content: "Prohlédněte si portréty, krajinu, architekturu a pouliční fotografii.",
+        content: "Fotky Adama Koldy z Plzně.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -35,8 +37,16 @@ function GalleryPage() {
         Galerie
       </h1>
       <p className="mt-6 max-w-xl animate-fade-up text-muted-foreground [animation-delay:200ms]">
-        Výběr z mé tvorby za poslední roky. Klikněte na fotografii pro zobrazení v plné velikosti.
+        Moje fotky. Klikni na fotku pro zobrazení v plné velikosti.
       </p>
+      <a
+        href={ZONERAMA_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-highlight hover:underline"
+      >
+        Celé album na Zoneramě <ExternalLink className="size-4" />
+      </a>
 
       <div className="mb-12 mt-12 flex flex-wrap gap-3">
         {CATEGORIES.map((c) => (
