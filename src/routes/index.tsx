@@ -34,8 +34,8 @@ function Index() {
         {/* Profile card */}
         <aside className="animate-fade-up rounded-3xl border border-border bg-card/70 p-8 text-center backdrop-blur lg:sticky lg:top-28 lg:self-start">
           <div className="mx-auto size-44 rounded-full bg-ring p-1 shadow-glow-highlight">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-card font-display text-6xl font-extrabold text-gradient-brand">
-              AK
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-card font-display text-6xl font-extrabold">
+              <span className="text-gradient-brand">AK</span>
             </div>
           </div>
           <h1 className="mt-6 text-3xl font-bold text-foreground">Adam Kolda</h1>
