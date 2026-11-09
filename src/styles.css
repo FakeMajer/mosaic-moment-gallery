@@ -168,7 +168,7 @@
   background-image: var(--gradient-page);
 }
 
-@utility bg-ring {
+@utility bg-avatar-ring {
   background: var(--gradient-ring);
 }
 

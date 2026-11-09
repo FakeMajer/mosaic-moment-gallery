@@ -33,7 +33,7 @@ function Index() {
       <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-20 pt-32 md:pt-36 lg:grid-cols-[400px_1fr] lg:gap-16">
         {/* Profile card */}
         <aside className="animate-fade-up rounded-3xl border border-border bg-card/70 p-8 text-center backdrop-blur lg:sticky lg:top-28 lg:self-start">
-          <div className="mx-auto size-44 rounded-full bg-ring p-1 shadow-glow-highlight">
+          <div className="mx-auto size-44 rounded-full bg-avatar-ring p-1 shadow-glow-highlight">
             <div className="flex h-full w-full items-center justify-center rounded-full bg-card font-display text-6xl font-extrabold">
               <span className="text-gradient-brand">AK</span>
             </div>
