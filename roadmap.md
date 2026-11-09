@@ -1,4 +1,6 @@
 # Roadmap
 
-- [x] New portfolio design (black & gold, Syne + Plus Jakarta Sans, masonry gallery) with pages: Domů, Galerie, O mně, Kontakt
-- [ ] Import real content (texts, photos, contacts) from the user's old website code — waiting for the user to attach the code (ZIP) or old site URL
+- [x] New site skeleton with masonry gallery and lightbox
+- [ ] Replace placeholder photographer content with real content from old site (bio, hobbies, socials, Discord status, contact email)
+- [ ] Apply user's own colour combination — waiting for user's choice
+- [ ] Real photos (profile photo + gallery photos) — waiting for user to upload
